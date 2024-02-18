@@ -1,8 +1,10 @@
 <?php
 
-use App\Http\Controllers\ApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ApiController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\JobOfferedController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +20,16 @@ use Illuminate\Support\Facades\Route;
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
+
+
+
 Route::get('/blogs', [ApiController::class, 'getBlogs']);
 Route::get('/blogs/{id}', [ApiController::class, 'getBlog']);
 
 
 Route::get('/jobs', [ApiController::class, 'getJobs']);
 Route::get('/jobs/{id}', [ApiController::class, 'getJob']);
+
+
+Route::post('/contact/insert', [ContactController::class, 'insertContact']);
+Route::post('/jobs/insert', [JobOfferedController::class, 'insertJob']);

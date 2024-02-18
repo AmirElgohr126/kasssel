@@ -15,11 +15,12 @@ class JobOfferedController extends Controller
             'phone' => ['required','numeric'],
             'here_about' => ['required','string'],
             'message' => ['required','string'],
-            'file' => ['nullabale','file'],
-        ]);
-
-        if ($request->hasFile('flie')) {
-            $path = $request->file("file")->store('job_offered', 'public');
+            'file_attachment' => 'nullable|file|max:6048'
+            ]);
+        if ($request->hasFile('file_attachment')) {
+            $file = $request->file_attachment;
+            $path = storeFile($file, 'jobs', 'public');
+            unset($validatedData['file']);
             $validatedData['file'] = $path;
         }
 
