@@ -24,5 +24,13 @@ class ContactController extends Controller
         return finalResponse('success', 200, 'data inserted successfully');
 
     }
+
+
+    public function contactView(Request $request)
+    {
+        $contacts = Contact::latest()->paginate(10);
+
+        return view('website.contacts.list', compact('contacts'));
+    }
 }
 

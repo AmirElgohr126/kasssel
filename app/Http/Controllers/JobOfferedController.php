@@ -31,4 +31,13 @@ class JobOfferedController extends Controller
         }
         return finalResponse('success',200,'success insert data ');
     }
+
+
+
+    public function applcationView(Request $request)
+    {
+        $employees = JobOffered::latest()->paginate(10);
+
+        return view('website.applcations.list', compact('employees'));
+    }
 }

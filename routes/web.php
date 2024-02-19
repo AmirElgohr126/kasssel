@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JopController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\JobOfferedController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +34,8 @@ Route::middleware('auth:web')->group(function () {
     Route::post('/job/delete/{id}', [JopController::class, 'delete'])->name('job.delete');
 
 
+    Route::get('/contact/view', [ContactController::class, 'contactView'])->name('contact.view');
+    Route::get('/applcation/view', [JobOfferedController::class, 'applcationView'])->name('applcation.view');
 
 
 

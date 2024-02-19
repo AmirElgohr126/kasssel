@@ -21,6 +21,18 @@
                         <span>Jobs</span>
                     </a>
                 </li>
+                <li>
+                    <a class="has-arrow" href="{{route('applcation.view')}}">
+                        <img src="{{asset('assets/images/users.svg')}}" width="20px" height="20px" alt="images">
+                        <span>Job applicants</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="has-arrow" href="{{route('contact.view')}}">
+                        <img src="{{asset('assets/images/user-x.svg')}}"  width="20px" height="20px" alt="images">
+                        <span>message Contact</span>
+                    </a>
+                </li>
 
             </ul>
         </div>
